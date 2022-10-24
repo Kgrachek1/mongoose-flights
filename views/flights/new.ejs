@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+</head>
+<body>
+    <h2>Choose a New Flight</h2>
+    <form action="/flights" method="POST">
+        <label>Airline Name:
+            <select name="airline">
+                <option value="American">American</option> 
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
+            </select>
+        </label><br>
+        <label>Flight Number:
+          <input type="text" name="flightNo">
+        </label><br>
+        <label>Departure Airport:
+            <input type="datetime-local" name="departs" value ="2022-10-22T12:30" min="2022-10-21T00:00" max="2023-10-21T00:00">
+        </label><br>
+        <label>Airport:
+            <select name="airport">
+                <option value="DEN">DEN</option>
+                <option value="DAL">DAL</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
+        </label><br>
+        <input type="submit" value="Add Flight">
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Flight Details</h1>
+    <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Flight Number</th>
+          <th>Departs</th>
+          <th>Departure Airport</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>
+          <td><%= flight.airport %></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h2>Destination</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Destination Airport</th>
+          <th>Arrival</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flight.destinations.sort((a, b) => a.arrival - b.arrival).forEach(function (destination) { %>
+          <tr>
+              
+          </tr>
+        <% }) %>
+      </tbody>
+    </table><br>
+
+    <form action="/flights/<%= flight._id %>" method="POST">
+      <label>Destination Airport:
+          <select name="airport">
+            <option value="TUC">TUC</option>
+            <option value="DAL">DAL</option>
+            <option value="LAX">LAX</option>
+            <option value="PHX">PHX</option>
+          </select>
+      </label><br>
+      <label>Arrival:
+        <input type="datetime-local" name="arrival">
+      </label><br>
+      <button type="submit">Add Destination Details</button>
+    </form>
+
+    <h3>Tickets</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tickets.forEach(function(t) { %>
+          <tr>
+            <td><%= t.seat %></td>
+            <td><%= t.price %></td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+
+    <form action="/flights/<%= flight._id %>/ticket" method="POST">
+      <label>Seat:
+      <input name="seat" required pattern="[A-F][1-9]\d?">
+      </label><br>
+      <label>Price:
+        <input type="number" name="price">
+      </label><br>
+      <button type="submit">Add Ticket</button>
+    </form>
+    <h4><a href="/flights/">Back to main</a></h4>
+  </body>
+</html>
