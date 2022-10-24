@@ -1,7 +1,23 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(215, 215, 215);
+
 }
 a {
-  color: #00B7FF;
+  color: #000000;
+}
+tr {
+  background: rgb(206, 245, 236);
+}
+button {
+  color: #000000;
+  background-color: rgb(169, 241, 224);
+  border-color: rgb(0, 0, 0);
+}
+input {
+  background-color: bisque;
+}
+select {
+  background-color: bisque;
 }
