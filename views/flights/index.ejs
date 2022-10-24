@@ -5,7 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h2>All Flights</h2>
+    <h2>All Available Flights</h2>
     <table>
       <thead>
         <tr>
@@ -22,11 +22,11 @@
             <td><%= f.flightNo %></td>
             <td><%= f.departs %></td>
             <td><%= f.airport %></td>
-            <td><a href="/flights/<%= f._id %>">Details</a></td>
+            <td><a href="/flights/<%= f._id %>"><button>Details</button></a></td>
           </tr>
           <% }) %>
       </tbody>
     </table>
-    <h4><a href="/flights/new">Add new flight</a></h4>
+    <h4><a href="/flights/new"><button>Add new flight</button></a></h4>
   </body>
 </html>

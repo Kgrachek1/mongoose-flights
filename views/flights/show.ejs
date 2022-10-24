@@ -40,7 +40,8 @@
       <tbody>
         <% flight.destinations.sort((a, b) => a.arrival - b.arrival).forEach(function (destination) { %>
           <tr>
-              
+            <td><%= destination.airport %></td>
+            <td><%= destination.arrival %></td>
           </tr>
         <% }) %>
       </tbody>
@@ -49,10 +50,10 @@
     <form action="/flights/<%= flight._id %>" method="POST">
       <label>Destination Airport:
           <select name="airport">
-            <option value="TUC">TUC</option>
+            <option value="DEN">DEN</option>
             <option value="DAL">DAL</option>
             <option value="LAX">LAX</option>
-            <option value="PHX">PHX</option>
+            <option value="SAN">SAN</option>
           </select>
       </label><br>
       <label>Arrival:
@@ -88,6 +89,6 @@
       </label><br>
       <button type="submit">Add Ticket</button>
     </form>
-    <h4><a href="/flights/">Back to main</a></h4>
+    <h4><a href="/flights/"><button>Back to main</button></a></h4>
   </body>
 </html>
