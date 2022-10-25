@@ -20,4 +20,5 @@ input {
 }
 select {
   background-color: bisque;
+  border-color: aliceblue;
 }
